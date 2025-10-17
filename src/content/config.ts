@@ -24,22 +24,30 @@ const news = defineCollection({
 		}),
 });
 
-
-
 const project = defineCollection({
-	loader: file("src/data/projects.json"),
+	loader: glob({ pattern: "**/*.md", base: "./src/content/project" }),
 	schema: ({image}) =>
 		z.object({
-			id: z.string(),
 			title: z.string(),
 			subtitle: z.string(),
+			summary: z.string(),
 			target: z.number(),
 			raised: z.number(),
 			cover: image(),
 		}),
 });
 
+const team = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
+	schema: ({image}) =>
+		z.object({
+			name: z.string(),
+			summary: z.string(),
+			role: z.string(),
+			profile: image(),
+		}),
+});
 
 
-export const collections = { blog, news,project };
+export const collections = { blog, news,project,team };
 

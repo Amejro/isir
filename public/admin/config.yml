@@ -30,12 +30,38 @@ collections:
     folder: "src/content/news"
     create: true 
     fields: 
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "news" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Teaser", name: "teaser", widget: "string" }
       - { label: "Autor", name: "autor", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "project" 
+    label: "Project" 
+    folder: "src/content/project"
+    create: true 
+    fields: 
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Target", name: "target", widget: "number" }
+      - { label: "Raised", name: "raised", widget: "number" }
+      - { label: "Cover", name: "cover", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "team" 
+    label: "Team" 
+    folder: "src/content/team"
+    create: true 
+    fields: 
+      - { label: "Layout", name: "layout", widget: "hidden", default: "team" }
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Profie Picture", name: "profile", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 
 media_folder: "src/assets/images" # Location where files will be stored in the repo
