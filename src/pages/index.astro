@@ -10,7 +10,6 @@ import ProjectCard from '../components/ProjectCard.astro';
 import EcoEmpower from '../assets/partners/EcoEmpower.png'
 
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png}');
 
 
 const FocusAreas = [
@@ -54,7 +53,7 @@ const team = await getCollection('team');
 
 ---
 
-<Layout>
+<Layout >
 	<!-- Hero Section -->
 	<section>
 		<div class='relative'>
@@ -131,7 +130,7 @@ const team = await getCollection('team');
 						))
 					}
 				</div>
-				
+
 			</div>
 		</div>
 	</section>

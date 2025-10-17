@@ -3,11 +3,19 @@ import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
+const meta = {
+	title:'Our Projects | ISIR Ghana – Sustainable Innovation in Action',
+	description:'Explore ISIR Ghana’s flagship projects advancing health, education, agriculture, and climate resilience through research and innovation.',
+	image:'',
+	url:Astro.url,
+	
+}
+
 const projects = await getCollection('project');
 
 ---
 
-<Layout>
+<Layout {...meta}>
     <main class="bg-white">
       {/* Hero Section */}
       <div class="bg-[url('https://images.unsplash.com/photo-1503264116251-35a269479413')] bg-cover bg-center  ">

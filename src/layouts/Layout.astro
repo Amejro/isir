@@ -1,8 +1,28 @@
 ---              
  import Footer from '../components/Footer.astro'
-import Head from '../components/Head.astro'
 import Nav from '../components/Nav.astro'
-import '../styles/global.css'  
+import '../styles/global.css'
+
+const {
+	title = "ISIR Ghana | Home",
+	description = "The Institute for Sustainable and Innovative Research (ISIR Ghana) advances evidence-based solutions in Child & Maternal Health, Education (STEAM), Agriculture, and Climate Change.",
+	url = Astro.url.origin,
+	image = "",
+	imageAlt = "",
+	siteName="ISIR Ghana",
+	keywords = [
+    "ISIR Ghana",
+    "Sustainability",
+    "Innovation",
+    "Research",
+    "Maternal Health",
+    "STEAM Education",
+    "Agriculture",
+    "Climate Change",
+  ],
+	...props
+} = Astro.props;
+
 --- 
 
 <!doctype html>
@@ -10,10 +30,28 @@ import '../styles/global.css'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
 		<meta name="generator" content={Astro.generator} />
-		<!-- <title>Astro Basics</title> -->
-		
+		<link rel="canonical" href={url} />
+		<link rel="sitemap" href="/sitemap-index.xml">
+		<title>{title}</title>
+		<meta name="description" content={description}>
+		<meta name="keywords" content={keywords.join(', ')}>
+
+		<!-- Open Graph tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image}>
+		<meta property="og:image:alt" content={imageAlt}>
+		<meta property="og:site_name" content={siteName} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
 	</head>
 	<body class='relative'>
 		<div class='fixed top-0 w-full z-10'>

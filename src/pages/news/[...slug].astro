@@ -14,9 +14,17 @@ export async function getStaticPaths() {
 
 const { title,teaser,autor, thumbnail, date} = Astro.props.post.data;
 const { Content } = await render(Astro.props.post);
+
+const meta = {
+	title:`${title}`,
+	description:`${teaser}`,
+	image:'',
+	url:Astro.url,
+	
+}
 ---
 
-<Layout>	
+<Layout {...meta}>	
 	<div class='my-20'>
 		<article class="prose max-w-3xl mx-auto px-4">
 			<h1 class='text-5xl text-center'>{title}</h1>

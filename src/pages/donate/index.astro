@@ -1,11 +1,16 @@
 ---
 import { BanknotesIcon, CreditCardIcon, QrCodeIcon, AcademicCapIcon, HeartIcon, SparklesIcon, UserGroupIcon, CakeIcon, CalendarIcon, ArrowPathIcon, CircleStackIcon } from '@heroicons/vue/24/outline';
 import Donate from '../../assets/Donate.jpg'
-import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import { Picture } from 'astro:assets';
 
-
+const meta = {
+	title:'Donate | Support Sustainable Development with ISIR Ghana',
+	description:'Support ISIR Ghana’s mission to drive sustainable development through research, innovation, and community impact across health, education, and climate action.',
+	image:'/Donate.jpg',
+	url:Astro.url,
+	
+}
 
 const presetAmounts = [
   { title: 'Support STEM Education', amount: 50, icon: AcademicCapIcon },
@@ -24,7 +29,7 @@ const otherWaysToGive = [
   { title: 'Become a Monthly Sustainer', icon: ArrowPathIcon },
 ];
 ---
-<Layout>
+<Layout {...meta}>
     <div class=" ">
         <div class='relative'>
             <Picture src={Donate} alt='Hero image'  class='aspect-video h-[60dvh] md:h-[80dvh] object-cover' />

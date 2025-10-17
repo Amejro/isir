@@ -4,9 +4,19 @@ import Layout from "../../layouts/Layout.astro";
 import { Picture } from "astro:assets";
 import HeroImage from '../../assets/hero-image.jpg'
 
+// 
+
+const meta = {
+	title:'About ISIR Ghana | Sustainable Research & Innovation',
+	description:'ISIR Ghana drives sustainable development through research, innovation, and partnerships in health, education, agriculture, and climate change.',
+	image:HeroImage,
+	url:Astro.url,
+	
+}
+
 ---
 
-<Layout>
+<Layout {...meta}>
     <div class="bg-white text-gray-900 border-b border-gray-200">
         {/* Header */}
         <!-- <div class="bg-gradient-to-r from-sky-900 to-sky-700 text-white py-16 px-4">

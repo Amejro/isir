@@ -6,17 +6,14 @@ const {
 	url = "http://www.example.com/",
 	image = "https://www.example.com/_astro/seo-banner.BZD7kegZ.webp",
 	imageAlt = "",
+	siteName="ISIR Ghana",
 	...props
 } = Astro.props;
 ---
 
 <link rel="sitemap" href="/sitemap-index.xml">
-<title> LOGO | {title}</title>
+<title> ISIR Ghana| {title}</title>
 <meta name="description" content={description}>
-
-
-<!-- Web analytics -->
-<script data-goatcounter="https://my-account.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 
 <!-- Open Graph tags -->
@@ -26,3 +23,11 @@ const {
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image}>
 <meta property="og:image:alt" content={imageAlt}>
+<meta property="og:site_name" content={siteName} />
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
