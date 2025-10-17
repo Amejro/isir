@@ -6,7 +6,7 @@ import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'https://Amejro.github.io',
+  site: 'https://isir-gh.pages.dev/',
   // base: '/isir',
   integrations: [vue()],
   prefetch: {
