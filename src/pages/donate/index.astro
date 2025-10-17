@@ -1,0 +1,134 @@
+---
+import { BanknotesIcon, CreditCardIcon, QrCodeIcon, AcademicCapIcon, HeartIcon, SparklesIcon, UserGroupIcon, CakeIcon, CalendarIcon, ArrowPathIcon, CircleStackIcon } from '@heroicons/vue/24/outline';
+import Donate from '../../assets/Donate.jpg'
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import { Picture } from 'astro:assets';
+
+
+
+const presetAmounts = [
+  { title: 'Support STEM Education', amount: 50, icon: AcademicCapIcon },
+  { title: 'Fund Water Project', amount: 100, icon: SparklesIcon },
+  { title: 'Sponsor Community', amount: 500, icon: UserGroupIcon },
+];
+
+const otherWaysToGive = [
+  { title: 'Fund a Child’s Education', icon: AcademicCapIcon },
+  { title: 'Support a Mother’s Health', icon: HeartIcon },
+  { title: 'Bring Clean Water to a Village', icon: SparklesIcon },
+  { title: 'Empower Farmers', icon: UserGroupIcon },
+  { title: 'Give in Honor', icon: CakeIcon },
+  { title: 'Donor-Advised Fund', icon: CircleStackIcon },
+  { title: 'Support a Fundraiser', icon: CalendarIcon },
+  { title: 'Become a Monthly Sustainer', icon: ArrowPathIcon },
+];
+---
+<Layout>
+    <div class=" ">
+        <div class='relative'>
+            <Picture src={Donate} alt='Hero image'  class='aspect-video h-[60dvh] md:h-[80dvh] object-cover' />
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class='absolute inset-0 flex items-center max-w-6xl mx-auto'>
+                <div class=" px-4">
+                    <h1 class="text-5xl font-extrabold text-white tracking-tight md:text-6xl">Make a Donation</h1>
+                     <div class="mt-4 h-1 w-16 rounded bg-[#04B130]" />
+                    <p class="mt-5 max-w-xl mx-auto text-xl text-gray-200">
+                        Your contribution helps us empower communities in Ghana. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" bg-gradient-to-b from-white via-sky-100 to-white pb-8  px-4 sm:px-6 lg:px-8">
+            <div class='max-w-6xl mx-auto'>
+                <div class="mt-12  gap-16 space-y-12">
+                <div class="space-y-12">
+                    {/* Mobile Money & Bank Transfer */}
+                    <div>
+                    <h2 class="mb-5 text-5xl py-6 font-bold font-heading text-center tracking-px-n leading-tight tracking-tight">Choose a way to give.</h2>
+
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg border hover:border-sky-600 shadow-md">
+                            <div class="flex items-center">
+                                <BanknotesIcon class="h-8 w-8 text-sky-600" />
+                                <h3 class="ml-4 text-lg font-medium text-gray-900">Mobile Money</h3>
+                            </div>
+                            <div class="mt-4 space-y-2 text-gray-600">
+                                <p><strong>MTN Mobile Money:</strong> 024 123 4567</p>
+                                <p><strong>Vodafone Cash:</strong> 050 987 6543</p>
+                                <p><strong>AirtelTigo Money:</strong> 027 111 2222</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border hover:border-sky-600 shadow-md">
+                            <div class="flex items-center">
+                                <CreditCardIcon class="h-8 w-8 text-green-600" />
+                                <h3 class="ml-4 text-lg font-medium text-gray-900">Bank Transfer</h3>
+                            </div>
+                            <div class="mt-4 space-y-2 text-gray-600">
+                                <p><strong>Bank:</strong> Ghana Commercial Bank</p>
+                                <p><strong>Account Name:</strong> ISIR Ghana</p>
+                                <p><strong>Account Number:</strong> 1234567890123</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    {/* Preset Amounts */}
+                    <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Preset Donations</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-xl leading-7 font-light">
+                        Your gift, no matter the size, makes a tangible difference. You can start with one of our preset donation amounts below, each tailored to support a specific area of our work. Click on an amount to contribute and help us build a brighter future for Ghanaian communities.
+                    </p>
+                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {presetAmounts.map((item) => (
+                        <button class="flex flex-col items-center justify-center p-6 bg-sky-600 text-white rounded-lg shadow-md hover:bg-sky-700 transition-colors"
+                        >
+                            <item.icon class="size-9 mb-2" />
+                            <span class="text-lg font-semibold">{item.title}</span>
+                            <span class="text-2xl font-bold">€{item.amount}</span>
+                        </button>
+                        ))}
+                    </div>
+                    </div>
+                    
+                    {/* QR Code */}
+                    <div class=' p-6'>
+                    <h2 class="text-2xl font-bold text-gray-900 text-center">Quick Pay</h2>
+                    <div class="mt-6  p-6 rounded-lg  flex items-center justify-center">
+                        <div class="text-center">
+                        <div class="h-32 w-32 mx-auto text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-32 w-32"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
+                        </div>
+                        <p class="mt-4 text-gray-500">Scan for quick and easy payment.</p>
+                        <p class="text-sm text-gray-400">(QR Code Coming Soon)</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                {/*  Other Ways to Give */}
+                <div class=" ">
+                    <h2 class="text-2xl font-bold text-gray-900">Other Ways to Give</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-xl leading-7 font-light">
+                    Every contribution is a step towards a stronger Ghana. Beyond one-time donations, there are many ways to support our mission. Explore these options to find a giving method that resonates with you, from honoring a loved one to becoming a monthly sustainer.
+                    </p>
+                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {otherWaysToGive.map((item) => (
+                        <div class="flex items-center p-4 rounded-lg hover:bg-gray-100">
+                        <div class="flex-shrink-0 bg-green-100 p-3 rounded-full">
+                            <item.icon class="h-6 w-6 text-green-600" />
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-lg font-medium text-gray-800">{item.title}</p>
+                        </div>
+                        </div>
+                    ))}
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

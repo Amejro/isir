@@ -1,0 +1,115 @@
+---
+import { Image } from 'astro:assets';
+import ISIR_LOGO from '../assets/ISIR_logo.jpg'
+
+ const path =  Astro.url.pathname
+
+   const navLinks = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+      href: "/about-us",
+    },
+    {
+      label: "Projects",
+      href: "/projects",
+    },
+    {
+      label: "Donate",
+      href: "/donate",
+    },
+    {
+      label: "Contact",
+      href: "/contact-us",
+    },
+  ];
+
+ console.log(path)
+---
+
+<header>
+  <nav
+    class="bg-white w-full flex justify-between items-center px-4 py-2 border-b border-gray-300"
+  >
+    <div class="flex items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <Image src={ISIR_LOGO} alt='ISIR Logo' class='size-8'/>
+      </a>
+    </div>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-gray-800 focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <ul class="hidden md:flex space-x-4 text-sky-600">
+      {navLinks.map((link) =>(
+        <li><a href={link.href} class={`hover:text-sky-700 ${link.href === path ? 'text-sky-800 underline decoration-sky-800' : ''}`}>{link.label}</a></li>
+      ))}
+  
+    </ul>
+  </nav>
+
+  <!-- ## Mobile Menu -->
+  <div
+    id="menu"
+    class="hidden fixed top-0 left-0 w-full h-full bg-gray-900/50 backdrop-blur-sm z-20"
+  >
+    <div class="w-64 bg-sky-600 h-full p-4">
+      <button id="close-btn" class="text-gray-900 focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <ul class="mt-4 text-white space-y-3">
+        {navLinks.map((link) =>(
+        <li><a href={link.href} class={` ${link.href === path ? ' underline ' : ''}`}>{link.label}</a></li>
+      ))}
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const menu = document.getElementById("menu");
+    const body = document.querySelector("body");
+
+    if (menuBtn) {
+      menuBtn.addEventListener("click", () => {
+        menu.classList.remove("hidden");
+        body.classList.add("overflow-hidden");
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        body.classList.remove("overflow-hidden");
+      });
+    }
+  </script>
+</header>

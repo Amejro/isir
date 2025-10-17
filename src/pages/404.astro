@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Head from '../components/Head.astro';
+---
+
+<Layout>
+    <Head title="404 Not Found" description="The page you are looking for does not exist." />
+
+    <section class="flex items-center justify-center py-20">
+        <div class="text-center p-8 bg-white">
+            <h1 class="text-6xl font-bold text-gray-800 mb-4">404</h1>
+            <p class="text-2xl text-gray-600 mb-8">Page Not Found</p>
+            <p class="text-lg text-gray-500 mb-8">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="/" class="inline-block px-6 py-3  font-semibold rounded-lg shadow-md  transition duration-300">
+                Go to Homepage
+            </a>
+        </div>
+    </section>
+</Layout>

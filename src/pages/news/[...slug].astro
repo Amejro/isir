@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("news");
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}));
+}
+
+
+const { title,teaser,autor, thumbnail, date} = Astro.props.post.data;
+const { Content } = await render(Astro.props.post);
+---
+
+<Layout>	
+	<div class='my-20'>
+		<article class="prose max-w-3xl mx-auto px-4">
+			<h1 class='text-5xl text-center'>{title}</h1>
+			<div class='text-gray-700 space-y-1'>
+				<p class=' italic font-light text-center'>{teaser}</p>
+				<div class='text-center '>Author: {autor} <span class='text-sm text-gray-400'>|</span> 
+					<time class=' text-center'>{date.toLocaleDateString()}</time>
+				</div>
+				
+			</div>
+			<Picture src={thumbnail} formats={['avif', 'webp']} alt="A description of my image." />
+			<Content />
+		</article>
+	</div>
+
+</Layout>

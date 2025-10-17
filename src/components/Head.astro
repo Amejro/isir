@@ -1,0 +1,28 @@
+---
+
+const {
+	title = "Home",
+	description = "We are a trusted health consulting firm dedicated to improving the quality, safety, and accountability of healthcare.",
+	url = "http://www.example.com/",
+	image = "https://www.example.com/_astro/seo-banner.BZD7kegZ.webp",
+	imageAlt = "",
+	...props
+} = Astro.props;
+---
+
+<link rel="sitemap" href="/sitemap-index.xml">
+<title> LOGO | {title}</title>
+<meta name="description" content={description}>
+
+
+<!-- Web analytics -->
+<script data-goatcounter="https://my-account.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+
+<!-- Open Graph tags -->
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image}>
+<meta property="og:image:alt" content={imageAlt}>

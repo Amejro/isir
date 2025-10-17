@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+export async function getStaticPaths() {
+	const projects = await getCollection("project");
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: { project },
+	}));
+}
+
+// id: z.string(),
+// 			title: z.string(),
+// 			subtitle: z.string(),
+// 			target: z.number(),
+// 			raised: z.number(),
+// 			cover: image(),
+
+const {id, title,subtitle, target,raised, cover} = Astro.props.project.data;
+const { Content } = await render(Astro.props.project);
+---
+
+<Layout>	
+	<div class='mt-20'>
+	
+	<article class="prose max-w-3xl mx-auto">
+		<h1 class='text-5xl'>{title}</h1>
+		<Picture src={cover} formats={['avif', 'webp']} alt={title} />
+		<Content />
+	</article>
+		
+
+
+
+
+
+	<!-- export const metadata = {
+  title: "Tamale STEAM Hub | ISIR Ghana",
+  description:
+    "A community innovation center by ISIR Ghana promoting Science, Technology, Engineering, Arts, and Mathematics education for inclusive growth.",
+}; -->
+
+
+    <section class="bg-white">
+      <div class="relative h-72 md:h-96">
+        <img
+          src="/images/tamale-steam-hub.jpg"
+          alt="Tamale STEAM Hub cover"
+          class="w-full h-full object-cover brightness-75"
+        />
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
+          <h1 class="text-3xl md:text-5xl font-bold mb-3">Tamale STEAM Hub</h1>
+          <p class="max-w-2xl text-gray-100">
+            Hands-on maker sessions and teacher training to boost girls’ participation in leadership and STEAM.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 py-16 space-y-10">
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Overview</h2>
+          <p class="text-gray-600 leading-relaxed">
+            The Tamale STEAM Hub is a community innovation center designed to promote
+            Science, Technology, Engineering, Arts, and Mathematics (STEAM) education in
+            Northern Ghana. It offers hands-on maker sessions, teacher training, and youth
+            innovation programs, particularly encouraging girls to explore technology and
+            leadership in STEAM fields.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Goal</h2>
+          <p class="text-gray-600 leading-relaxed">
+            To foster inclusive and innovative learning through STEAM-based education and
+            leadership programs that prepare youth for the future of work.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Expected Impact</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Empowered students and educators equipped with practical STEAM skills, improved
+            gender inclusion in science and technology, and stronger local innovation
+            ecosystems.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Core Focus Area</h2>
+          <p class="text-gray-600 leading-relaxed">
+            ISIR Ghana promotes inclusive and technology-driven learning through STEAM
+            initiatives that empower educators and youth to lead change.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Key Performance Indicators</h2>
+          <ul class="list-disc ml-6 text-gray-600 leading-relaxed">
+            <li>500 educators and 5,000 students trained within 5 years.</li>
+            <li>40% increase in girls’ participation in STEAM programs.</li>
+            <li>Two new satellite STEAM hubs established by Year 5.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+	</div>
+
+</Layout>

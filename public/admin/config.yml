@@ -1,0 +1,42 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+  site_domain: localhost:4321
+  auth_endpoint: oauth
+# backend:
+#   name: github
+#   repo: username/repo-name
+#   branch: main
+#   site_domain: localhost:4321
+#   base_url: http://localhost:4321
+#   auth_endpoint: oauth
+collections:
+  - name: "blog"
+    label: "Blog" 
+    folder: "src/content/blog" 
+    create: true 
+    fields: 
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "news" 
+    label: "News" 
+    folder: "src/content/news"
+    create: true 
+    fields: 
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Teaser", name: "teaser", widget: "string" }
+      - { label: "Autor", name: "autor", widget: "string" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "../../assets/images" # The src attribute for uploaded media

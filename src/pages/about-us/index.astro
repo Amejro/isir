@@ -1,0 +1,170 @@
+---
+import { CheckCircleIcon, GlobeAltIcon, LightBulbIcon, UsersIcon } from "@heroicons/vue/24/outline";
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import HeroImage from '../../assets/hero-image.jpg'
+
+---
+
+<Layout>
+    <div class="bg-white text-gray-900 border-b border-gray-200">
+        {/* Header */}
+        <!-- <div class="bg-gradient-to-r from-sky-900 to-sky-700 text-white py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About ISIR Ghana</h1>
+            <p class="text-xl text-blue-100">Sustainability Through Innovation</p>
+            </div>
+        </div> -->
+                <div class='relative'>
+            <Picture src={HeroImage} alt='Hero image' class='aspect-video h-[50dvh] md:h-[70dvh] object-cover' />
+                <!-- <div class="absolute inset-0 bg-gradient-to-tr from-sky-600 "/> -->
+                <div class="absolute inset-0 bg-black/50" />
+                <div class='absolute inset-0  flex items-center max-w-6xl mx-auto'>
+                    <div class="px-8 max-w-3xl">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">About ISIR Ghana</h1>
+                        <div class="mt-4 h-1 w-16 rounded bg-[#04B130]" />
+                        
+                        <p class="mt-6 text-lg md:text-xl text-gray-100 leading-relaxed">
+                            Sustainability Through Innovation
+                        </p>
+                    </div>
+                    </div>
+                </div>
+    </div>
+
+      {/* Our Story Section */}
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-5xl font-bold text-gray-900 mb-6">Our Story</h2>
+          <p class="font-light text-xl mb-6">
+            The Institute for Sustainable & Innovative Research (ISIR Ghana) is a multidisciplinary research and consultancy institute dedicated to advancing sustainable and evidence-based development across Ghana and West Africa. Founded on the belief that innovation and knowledge should directly drive progress, ISIR Ghana bridges the gap between research, policy, and real-world action — transforming data into impact.
+          </p>
+          <p class="font-light text-xl ">
+            Our work focuses on creating scalable solutions that improve lives, strengthen systems, and contribute to the achievement of the United Nations Sustainable Development Goals (SDGs).
+          </p>
+        </div>
+      </section>
+<div class='bg-gray-50 '>
+      {/* Vision & Mission */}
+      <section class="py-12 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold text-sky-600 mb-4">Our Vision</h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              To be a leading center of excellence in applied research and policy innovation for sustainable development in Ghana and beyond.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-sky-600 mb-4">Our Mission</h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              To empower governments, NGOs, and communities through evidence-based research, policy support, and innovation-driven capacity building.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Focus */}
+      <section class="py-12 px-4 ">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-12">Our Strategic Focus</h2>
+          <p class="text-gray-700 text-lg mb-10">
+            ISIR Ghana operates within four key sectors that define our national and regional impact:
+          </p>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+              <h4 class="text-xl font-bold text-blue-900 mb-3">Child & Maternal Health</h4>
+              <p class="text-gray-700">Enhancing healthcare accessibility and outcomes through data-led initiatives and community engagement.</p>
+            </div>
+            <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-600">
+              <h4 class="text-xl font-bold text-green-900 mb-3">Education (STEAM Focus)</h4>
+              <p class="text-gray-700">Promoting inclusive and technology-based learning through Science, Technology, Engineering, Arts, and Mathematics education.</p>
+            </div>
+            <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-600">
+              <h4 class="text-xl font-bold text-amber-900 mb-3">Agriculture</h4>
+              <p class="text-gray-700">Supporting the adoption of climate-smart and sustainable agricultural practices to improve productivity and food security.</p>
+            </div>
+            <div class="bg-teal-50 p-6 rounded-lg border-l-4 border-teal-600">
+              <h4 class="text-xl font-bold text-teal-900 mb-3">Climate Change</h4>
+              <p class="text-gray-700">Advancing renewable energy adoption and community resilience to climate-related challenges.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section class="py-16 px-4 ">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Approach</h2>
+          <p class="text-gray-700 text-lg leading-relaxed max-w-2xl">
+            ISIR Ghana integrates research, innovation, and policy to design practical solutions for complex development challenges. Our approach combines academic excellence with grassroots engagement, ensuring that research outputs are directly translated into action and measurable outcomes. We align our initiatives with both Agenda 2030 (UN SDGs) and Africa's Agenda 2063, positioning ISIR as a strategic partner for governments and development institutions.
+          </p>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section class="py-12 px-4 ">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-12">Our Core Values</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              { icon: <CheckCircleIcon class="w-8 h-8" />, title: 'Integrity & Transparency', desc: 'Highest standards of accountability' },
+              { icon: <LightBulbIcon class="w-8 h-8" />, title: 'Innovation', desc: 'Creative, technology-driven solutions' },
+              { icon: <UsersIcon class="w-8 h-8" />, title: 'Collaboration', desc: 'Strong partnerships built on trust' },
+              { icon: <GlobeAltIcon class="w-8 h-8" />, title: 'Inclusion', desc: 'Gender equality and youth empowerment' },
+              { icon: <CheckCircleIcon class="w-8 h-8" />, title: 'Sustainability', desc: 'Long-term value creation' }
+            ].map((value, i) => (
+              <div  class="bg-blue-50 p-6 rounded-lg text-center">
+                <div class="text-blue-600 mb-3 flex justify-center">{value.icon}</div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">{value.title}</h4>
+                <p class="text-sm text-gray-600">{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section class="py-12 px-4 ">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Leadership</h2>
+          <p class="text-gray-700 text-lg leading-relaxed max-w-2xl">
+            ISIR Ghana's leadership team brings together experts from diverse disciplines — including public health, education, agriculture, and environmental science — united by a shared commitment to sustainability through innovation. The team's collective experience in policy design, research management, and development consulting ensures that every project is guided by evidence, integrity, and impact.
+          </p>
+        </div>
+      </section>
+
+      {/* Partnerships */}
+      <section class="py-16 px-4 ">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Partnerships</h2>
+          <p class="text-gray-700 text-lg leading-relaxed max-w-2xl">
+            ISIR Ghana collaborates with local and international institutions, governments, and NGOs that share our mission of advancing sustainable development through innovation and research. Together, we co-create programs, policy frameworks, and innovation pilots that drive measurable progress and build resilient communities.
+          </p>
+        </div>
+      </section>
+</div>
+
+      {/* Our Impact */}
+      <section class="py-16 px-4 bg-sky-600 text-white">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Our Impact</h2>
+          <p class="text-blue-100 text-lg mb-8 max-w-2xl ">
+            Every ISIR Ghana initiative is designed with impact and accountability at its core. Through flagship programs such as the Mothers First Health Initiative, Tamale STEAM Hub, AgriSmart Ghana, and Solar4Change, we are:
+          </p>
+          <ul class="grid md:grid-cols-2 gap-6">
+            {[
+              'Strengthening evidence-based policymaking',
+              'Enhancing local capacity and youth empowerment',
+              'Promoting gender inclusion',
+              'Building community resilience against climate change'
+            ].map((item, i) => (
+              <li  class="flex items-start">
+                <CheckCircleIcon class="w-6 h-6 text-green-300 mr-3 mt-1 flex-shrink-0" />
+                <span class="text-lg">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
+</Layout>

@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ConsultingImage from '../../assets/Hero-images/consulting.jpg';
+import stethoscope from '../../assets/Hero-images/stethoscope.avif';
+import { Picture } from 'astro:assets';
+import Head from '../../components/Head.astro';
+
+const howWeHelpClients = [
+    {
+        title:'Strategy & Policy Development',
+        content:' Strengthen healthcare delivery through effective policies and long-term strategies. By providing evidence-based guidance, we help you design policies that enhance service quality, ensure compliance with health regulations, and align with global best practices.'
+    },
+    {
+        title:'Operational Excellence',
+        content:'Optimize efficiency, workforce productivity, and resource allocation. Through process reviews and performance assessments, we identify inefficiencies, streamline workflows, and support leadership teams to improve cost-effectiveness and care outcomes.'
+    },
+    {
+        title:'Quality & Compliance',
+        content:'Ensure hospitals and clinics meet safety, ethical, and professional standards. We conduct compliance assessments, develop quality improvement frameworks, and train healthcare professionals to consistently meet regulatory and accreditation requirements.'
+    },
+    {
+        title:'Capacity Building & Training',
+        content:'Equip healthcare teams with the knowledge and skills to excel. We design and deliver targeted training programs to strengthen leadership, clinical governance, and patient-centered care across the organization.'
+    },
+]
+---
+
+<Layout>
+
+     <Head title='Consulting' description='Strategic solutions to strengthen healthcare delivery'/>
+
+    <section >
+        <div class="relative">
+            <Picture src={ConsultingImage} alt="Consulting"  />
+            <div class="max-w-6xl mx-auto absolute inset-0 flex items-center justify-center md:justify-end text-center text-white">
+                <div class=' md:space-y-6 text-start p-4 mt-8 sm:mt-0'>
+                    <h1 class="font-black text-2xl md:text-5xl leading-10 md:leading-6 ">Health Consulting</h1>
+                    <p class='text-xl leading-8'>Strategic solutions to strengthen healthcare delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='max-w-6xl mx-auto py-16  px-4'>
+        <div class='max-w-3xl mx-auto space-y-3 text-xl  leading-8 font-light '>
+            <p>
+            Developed through years of industry expertise and practical implementation, our consulting services empower healthcare institutions to achieve operational excellence, regulatory compliance, and sustainable growth. 
+        </p>
+        <p>
+            Our healthcare consulting practice equips organizations with the tools and frameworks needed to improve patient care, reduce inefficiencies, and manage resources more effectively. By aligning leadership, processes, and people, we enable healthcare providers to deliver safer, more efficient, and more equitable services.
+        </p>
+
+        </div>
+        
+    </section>
+
+    <section class='max-w-6xl mx-auto pb-16 px-4'>
+        <h2 class="text-base font-medium text-center uppercase tracking-tight my-6">How we help clients</h2>
+
+        <p class='max-w-3xl mx-auto space-y-3 text-xl  leading-8 font-light text-center'>
+            We support organizations across the healthcare ecosystem and offer flexible, customized consulting models to meet your specific needs. Our services focus on four key areas:
+        </p>
+
+        <ul class='grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12 space-y-6'>
+            {howWeHelpClients.map((item)=>(
+                <li class='space-y-2'>
+                    <h4 class="text-2xl leading-7 font-medium">{item.title}</h4>
+                    <p class='text-xl leading-8 font-light '>{item.content}</p>
+                </li>
+            ))}
+        </ul>
+    </section>
+
+
+</Layout>

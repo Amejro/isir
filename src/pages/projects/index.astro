@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+import { projects } from "../../data/projects";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+    <main class="bg-white">
+      {/* Hero Section */}
+      <div class="bg-[url('https://images.unsplash.com/photo-1503264116251-35a269479413')] bg-cover bg-center  ">
+        <div class="bg-black/50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="md:w-2/3">
+              <h1 class="text-6xl text-white font-bold mb-4">Projects</h1>
+              <hr class="w-1/6 text-sky-600 " />
+              <p class="my-8 text-2xl text-gray-100">
+                ISIR Ghana drives impact through innovation — from maternal health and STEAM education to agriculture and climate resilience. Explore our initiatives below.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Projects Grid */}
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-3 gap-6">
+          {projects.map((p) => (
+            <a href={`/projects/${p.id}`} class="block rounded-2xl border overflow-hidden hover:shadow-xl transition">
+              <div class="relative w-full ">
+                <Image
+                  src={p.cover}
+                  alt={`${p.title} cover`}
+                  class="aspect-square"
+                />
+              </div>
+              <div class="p-4 bg-gray-50">
+                <h3 class="text-lg font-semibold">{p.title}</h3>
+                <p class="text-sm text-gray-600 mt-1">{p.subtitle}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+
+
+      <section class="bg-white py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Projects</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        At <span class="font-semibold">ISIR Ghana</span>, our projects turn research into action — driving innovation, sustainability, and measurable impact across health, education, agriculture, and climate resilience.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Project Card -->
+      <div class="bg-gray-50 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition">
+        <img src="/images/mothers-first-cover.jpg" alt="Mothers First Health Initiative cover" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Mothers First Health Initiative</h3>
+          <p class="text-sm text-sky-600 font-medium mb-3">Empowering mothers through education, referrals, and postpartum care.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Enhancing maternal and child health through community-based antenatal education, referral systems, and postpartum support. Strengthening local health networks to reduce maternal mortality and improve child outcomes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-gray-50 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition">
+        <img src="/images/tamale-steam-hub.jpg" alt="Tamale STEAM Hub cover" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Tamale STEAM Hub</h3>
+          <p class="text-sm text-amber-600 font-medium mb-3">Hands-on learning and leadership programs driving inclusive STEAM education.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Promoting Science, Technology, Engineering, Arts, and Mathematics (STEAM) education through maker workshops and teacher training. Empowering youth, especially girls, to lead in technology and innovation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-gray-50 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition">
+        <img src="/images/agri-smart-ghana.jpg" alt="AgriSmart Ghana cover" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">AgriSmart Ghana</h3>
+          <p class="text-sm text-amber-600 font-medium mb-3">Data-driven farming for productivity, resilience, and food security.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Supporting farmers with climate-smart practices, data analytics, and advisory services to improve yield, enhance efficiency, and strengthen resilience for sustainable agriculture.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-gray-50 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition">
+        <img src="/images/solar4change.jpg" alt="Solar4Change cover" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Solar4Change</h3>
+          <p class="text-sm text-amber-600 font-medium mb-3">Renewable energy projects powering clinics and schools for reliable service delivery.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Implementing solar-powered micro-projects that reduce outages and energy costs in rural clinics and schools, improving service delivery and promoting clean energy adoption.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-gray-50 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition">
+        <img src="/images/health-data-lab.jpg" alt="Health Data Innovation Lab cover" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Health Data Innovation Lab</h3>
+          <p class="text-sm text-amber-600 font-medium mb-3">Predictive analytics and digital dashboards improving health decisions.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Developing predictive analytics and visualization tools to strengthen early disease detection and improve data-driven resource planning in Ghana’s healthcare system.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-gray-50 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition">
+        <img src="/images/solar-borehole.jpg" alt="Solar-Powered Borehole cover" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Solar-Powered Borehole Project</h3>
+          <p class="text-sm text-amber-600 font-medium mb-3">Delivering clean, safe water to communities through solar innovation.</p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Providing off-grid solar pumping and filtration systems for clinics, schools, and villages — ensuring reliable, sustainable access to clean water for improved health and community well-being.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Closing Section -->
+    <div class="text-center mt-16">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Driving Sustainable Change</h3>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Each ISIR Ghana project reflects our vision of bridging knowledge and action. Through innovation, partnerships, and evidence-based research, we continue to deliver results that support Ghana’s sustainable development goals and empower communities for generations to come.
+      </p>
+    </div>
+  </div>
+</section>
+
+    </main>
+</Layout>
