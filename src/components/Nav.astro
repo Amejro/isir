@@ -7,23 +7,23 @@ import ISIR_LOGO from '../assets/ISIR_logo.jpg'
    const navLinks = [
     {
       label: "Home",
-      href: "/",
+      href: `${import.meta.env.BASE_URL}/`,
     },
     {
       label: "About",
-      href: "/about-us",
+      href: `${import.meta.env.BASE_URL}/about-us`,
     },
     {
       label: "Projects",
-      href: "/projects",
+      href: `${import.meta.env.BASE_URL}/projects`,
     },
     {
       label: "Donate",
-      href: "/donate",
+      href: `${import.meta.env.BASE_URL}/donate`,
     },
     {
       label: "Contact",
-      href: "/contact-us",
+      href: `${import.meta.env.BASE_URL}/contact-us`,
     },
   ];
 
@@ -35,7 +35,7 @@ import ISIR_LOGO from '../assets/ISIR_logo.jpg'
     class="bg-white w-full flex justify-between items-center px-4 py-2 border-b border-gray-300"
   >
     <div class="flex items-center">
-      <a href="/" class="flex items-center space-x-2">
+      <a href=`${import.meta.env.BASE_URL}/` class="flex items-center space-x-2">
         <Image src={ISIR_LOGO} alt='ISIR Logo' class='size-8'/>
       </a>
     </div>

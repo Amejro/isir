@@ -36,7 +36,7 @@ const projects = await getCollection('project');
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid md:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <a href={`/projects/${project.id}`} class="bg-gray-50  rounded-2xl border overflow-hidden hover:shadow-xl transition">
+            <a href={`${import.meta.env.BASE_URL}/projects/${project.id}`} class="bg-gray-50  rounded-2xl border overflow-hidden hover:shadow-xl transition">
                 <div class="">
                     <Image
                       src={project.data.cover}
